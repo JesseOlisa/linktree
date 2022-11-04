@@ -1,4 +1,6 @@
-import Home from './components/main_components/Home'
+import Home from './page/Home'
+import Contact from './page/components/Contact'
+
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -9,6 +11,7 @@ function App() {
       <>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </>
     )

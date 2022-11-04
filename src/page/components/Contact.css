@@ -1,0 +1,8 @@
+.name--container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 100%;
+}
+.name--container input{
+    min-width: 50%;
+}

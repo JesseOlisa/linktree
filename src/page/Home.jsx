@@ -1,9 +1,10 @@
 import React from 'react'
-import profileImg from '../../assets/profile__img.jpg'
-import slackImg from '../../assets/slack.svg'
-import gitImg from '../../assets/git.svg'
-import logo from '../../assets/logo.svg'
-import i4GImg from '../../assets/I4G.svg'
+import profileImg from '../assets/profile__img.jpg'
+import slackImg from '../assets/slack.svg'
+import gitImg from '../assets/git.svg'
+import logo from '../assets/logo.svg'
+import i4GImg from '../assets/I4G.svg'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return(
@@ -21,6 +22,7 @@ const Home = () => {
             <a href="https://books.zuri.team/" id='book__python' className='link__btn' target='_blank'>Python Books</a>
             <a href="https://background.zuri.team/" id='pitch' className='link__btn' target='_blank'>Background Check for coders</a>
             <a href="https://books.zuri.team/design-rules" id='book__design' className='link__btn' target='_blank'>Design Books</a>
+            <Link to="/contact" id='contact' className='link__btn'>Contact Me</Link>
           </section>
 
           <section className='socials--section flex'>
