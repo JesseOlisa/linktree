@@ -13,7 +13,7 @@ function App() {
         <header className='flex profile--section'>
           <img src={profileImg} alt="profile Image" />
           <h2 id="twitter">JesseOGBO</h2>
-          <h2 id="twitter" hidden>Jesse Ogbonna</h2>
+          <h2 id="slack" hidden>Jesse Ogbonna</h2>
         </header>
         <main>
           <section className='main--section flex'>
