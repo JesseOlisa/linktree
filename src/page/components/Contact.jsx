@@ -3,7 +3,7 @@ import './Contact.css'
 
 const Contact = () => {
   return (
-    <div className='main--container'>
+    <div className='main--container contact'>
         <header>
             <h1>Contact Me</h1>
             <p>Hi there, contact me to ask me about anything you have in mind</p>
@@ -50,16 +50,16 @@ const Contact = () => {
                     </textarea>
                 </label>
                 
-                <label htmlFor="consent">
+                <label htmlFor="consent" className='consent--container'>
                     <input 
                         type="checkbox" 
                         id='consent' 
                         name='consent' 
                     />
-                    <p>You are agreeing to provide a data to your Jesse Ogbonna who may contact you</p>
+                    <span>You are agreeing to provide a data to your Jesse Ogbonna who may contact you</span>
                 </label>
 
-                <button id='btn__submit'>Send message</button>
+                <button id='btn__submit' className='btn'>Send message</button>
             </form>
         </main>
     </div>
