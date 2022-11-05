@@ -133,6 +133,15 @@ input[type="checkbox"]:disabled {
 .btn:disabled{
     background: #B2DDFF;
 }
+.submit--page{
+    text-align: center;
+}
+.btn--link{
+    text-decoration: none;
+    display: block;
+    max-width: fit-content;
+    margin-inline: auto;
+}
 
 @media screen and (max-width: 890px) {
     .contact {
