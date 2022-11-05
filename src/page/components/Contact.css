@@ -93,8 +93,7 @@ input[type="checkbox"]::before {
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     background: url('../../assets/check-Icon.svg') no-repeat;
-    /* border: 1px solid #1570EF; */
-    margin-top: .1rem
+    margin-top: .1rem;
 }
 input[type="checkbox"]:checked::before {
     transform: scale(1);
