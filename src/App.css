@@ -35,17 +35,4 @@ header h2 {
   margin-top: 1.5rem;
   padding-block: .5rem;
 }
-footer {
-  min-width: 100% ;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  border-top: 1px solid #EAECF0;
-  margin-top: 4rem;
-  padding-block: 2.5rem 1rem;
-}
 
-@media screen and (max-width: 550px) {
-  footer {
-    display: none !important;
-  }
-}

@@ -22,3 +22,25 @@ body,html {
   align-items: center;
   justify-content: center;
 }
+/* footer {
+  padding-inline: 10%;
+  min-width: 100%;
+} */
+footer {
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  border-top: 1px solid #EAECF0;
+  margin-top: 4rem;
+  padding-block: 2.5rem 1rem;
+  margin-inline: 5%;
+}
+
+@media screen and (max-width: 720px) {
+  footer{
+    flex-direction: column !important;
+    gap: 1rem;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding-inline: 10% 0;
+  }
+}

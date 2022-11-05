@@ -2,8 +2,6 @@ import React from 'react'
 import profileImg from '../assets/profile__img.jpg'
 import slackImg from '../assets/slack.svg'
 import gitImg from '../assets/git.svg'
-import logo from '../assets/logo.svg'
-import i4GImg from '../assets/I4G.svg'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
@@ -34,11 +32,6 @@ const Home = () => {
             </a>
           </section>
         </main>
-        <footer className='flex'>
-          <img src={logo} alt="logo" />
-          <p>HNG Internship 9 Frontend Task</p>
-          <img src={i4GImg} alt="logo" />
-        </footer>
     </div>
 
     )

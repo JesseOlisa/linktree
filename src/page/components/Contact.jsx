@@ -77,83 +77,83 @@ const Contact = () => {
             </div>
             ) : (
               <>
-              <header>
-            <h1>Contact Me</h1>
-            <p>Hi there, contact me to ask me about anything you have in mind</p>
-        </header>
-        <main>
-            <form onSubmit={handleSubmit}>
-               <div className='name--container flex'>
-                <label htmlFor="first_name">
-                        <p>First name</p>
-                        <input 
-                            type="text" 
-                            id='first_name' 
-                            name='firstname' 
-                            placeholder='Enter your first name'
-                            value={formControl.firstname}
-                            onChange={handleChange}
-                            className={`${errorStyle("firstname")}`}
-                        />
-                        <p className="danger">{errorInfo.firstname}</p>
-                    </label>
-                    <label htmlFor="last_name">
-                        <p>Last name</p>
-                        <input 
-                            type="text" 
-                            id='last_name' 
-                            name='lastname' 
-                            placeholder='Enter your last name'
-                            value={formControl.lastname}
-                            onChange={handleChange}
-                            className={`${errorStyle("lastname")}`}
-                        />
-                        <p className="danger">{errorInfo.lastname}</p>
-                    </label>
-               </div>
+                <header>
+                    <h1>Contact Me</h1>
+                    <p>Hi there, contact me to ask me about anything you have in mind</p>
+                </header>
+                <main>
+                    <form onSubmit={handleSubmit}>
+                        <div className='name--container flex'>
+                            <label htmlFor="first_name">
+                                    <p>First name</p>
+                                    <input 
+                                        type="text" 
+                                        id='first_name' 
+                                        name='firstname' 
+                                        placeholder='Enter your first name'
+                                        value={formControl.firstname}
+                                        onChange={handleChange}
+                                        className={`${errorStyle("firstname")}`}
+                                    />
+                                    <p className="danger">{errorInfo.firstname}</p>
+                                </label>
+                                <label htmlFor="last_name">
+                                    <p>Last name</p>
+                                    <input 
+                                        type="text" 
+                                        id='last_name' 
+                                        name='lastname' 
+                                        placeholder='Enter your last name'
+                                        value={formControl.lastname}
+                                        onChange={handleChange}
+                                        className={`${errorStyle("lastname")}`}
+                                    />
+                                    <p className="danger">{errorInfo.lastname}</p>
+                                </label>
+                        </div>
 
-                <label htmlFor="email">
-                    <p>Email</p>
-                    <input 
-                        type="text" 
-                        id='email' 
-                        name='email' 
-                        placeholder='yourname@email.com' 
-                        value={formControl.email} 
-                        onChange={handleChange}
-                        className={`${errorStyle("email")}`}
-                    />
-                    <p className="danger">{errorInfo.email}</p>
-                </label>
-                <label htmlFor="message">
-                    <p>Message</p>
-                    <textarea 
-                        id='message' 
-                        name='message' 
-                        placeholder='Send me a message and i will reply as soon as possible...'
-                        value={formControl.message}
-                        onChange={handleChange} 
-                        className={`${errorStyle("message")}`}
-                    >
-                    </textarea>
-                    <p className="danger">{errorInfo.message}</p>
-                </label>
-                
-                <label htmlFor="consent" className='consent--container'>
-                    <input 
-                        type="checkbox" 
-                        id='consent' 
-                        name='consent'
-                        onChange={validateConsent}
-                    />
-                    <span>You are agreeing to provide a data to your Jesse Ogbonna who may contact you</span>
-                    <p className="danger">{errorInfo.consent}</p>
-                </label>
+                        <label htmlFor="email">
+                            <p>Email</p>
+                            <input 
+                                type="text" 
+                                id='email' 
+                                name='email' 
+                                placeholder='yourname@email.com' 
+                                value={formControl.email} 
+                                onChange={handleChange}
+                                className={`${errorStyle("email")}`}
+                            />
+                            <p className="danger">{errorInfo.email}</p>
+                        </label>
+                        <label htmlFor="message">
+                            <p>Message</p>
+                            <textarea 
+                                id='message' 
+                                name='message' 
+                                placeholder='Send me a message and i will reply as soon as possible...'
+                                value={formControl.message}
+                                onChange={handleChange} 
+                                className={`${errorStyle("message")}`}
+                            >
+                            </textarea>
+                            <p className="danger">{errorInfo.message}</p>
+                        </label>
+                        
+                        <label htmlFor="consent" className='consent--container'>
+                            <input 
+                                type="checkbox" 
+                                id='consent' 
+                                name='consent'
+                                onChange={validateConsent}
+                            />
+                            <span>You are agreeing to provide a data to your Jesse Ogbonna who may contact you</span>
+                            <p className="danger">{errorInfo.consent}</p>
+                        </label>
 
-                <button id='btn__submit' className='btn'>Send message</button>
-            </form>
-        </main>
-              </> 
+                        <button id='btn__submit' className='btn'>Send message</button>
+                    </form>
+                </main>
+                    </> 
             )}
 
         </>
