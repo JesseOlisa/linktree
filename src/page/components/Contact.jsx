@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Contact.css'
 
@@ -17,13 +17,6 @@ const Contact = () => {
     const [isSummited, setisSummited] = useState(false);
     const [consent, setConsent] = useState(false)
 
-    //USE EFFECTS
-    useEffect(() => {
-        if((Object.keys(errorInfo).length === 0 && consent) && isSummited){
-            console.log(formControl)
-        }
-    }, [errorInfo])
-
     // FUNCTIONS
     
     // This function updates the value of the input element as you type
@@ -37,41 +30,39 @@ const Contact = () => {
         e.preventDefault();
         setErrorInfo(validateForm(formControl));
         setisSummited(true)
-
-        // setTimeout(() => {
-        //     setisSummited(false)
-        //     setFormControl(userInfo)
-        //     // setErrorInfo({})
-        //     setConsent(false)
-        // }, 3000)
     }
 
+    //This function validates the checkbox/consent
     const validateConsent = (e) => {
         const {checked} = e.target;
         setConsent(checked)
     }
     
+    // this function updates the style if input has error messages
+    const errorStyle = (name) => {
+        return name in errorInfo ? "danger--input" : ""
+    }
     //this function validates the form
     const validateForm = (values) => {
-        const errormsgs = {}
+        const errormsgs = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if(!values.firstname) {
-            errormsgs.firstname = "Enter your firstname"
+            errormsgs.firstname = "Please enter your firstname";
         }
         if(!values.lastname) {
-            errormsgs.lastname = "Enter your lastname"
+            errormsgs.lastname = "Please enter your lastname";
         }
         if(!values.email) {
-            errormsgs.email = "Enter your email address"
+            errormsgs.email = "Please enter your email address";
         }
         else if(!emailRegex.test(values.email)) {
-            errormsgs.email = "Enter a valid email address"
+            errormsgs.email = "Please enter a valid email address";
         }
         if(!values.message) {
-            errormsgs.message = "what message would you like pass?"
+            errormsgs.message = "Please enter a message";
         }
         if(consent === false) {
-            errormsgs.consent = "consent needed"
+            errormsgs.consent = "Please tick the box";
         }
         return errormsgs 
     }
@@ -87,9 +78,6 @@ const Contact = () => {
             ) : (
               <>
               <header>
-            <pre>{JSON.stringify(formControl, undefined, 2)}</pre>
-            
-            
             <h1>Contact Me</h1>
             <p>Hi there, contact me to ask me about anything you have in mind</p>
         </header>
@@ -105,8 +93,9 @@ const Contact = () => {
                             placeholder='Enter your first name'
                             value={formControl.firstname}
                             onChange={handleChange}
+                            className={`${errorStyle("firstname")}`}
                         />
-                        <p>{errorInfo.firstname}</p>
+                        <p className="danger">{errorInfo.firstname}</p>
                     </label>
                     <label htmlFor="last_name">
                         <p>Last name</p>
@@ -117,8 +106,9 @@ const Contact = () => {
                             placeholder='Enter your last name'
                             value={formControl.lastname}
                             onChange={handleChange}
+                            className={`${errorStyle("lastname")}`}
                         />
-                        <p>{errorInfo.lastname}</p>
+                        <p className="danger">{errorInfo.lastname}</p>
                     </label>
                </div>
 
@@ -131,8 +121,9 @@ const Contact = () => {
                         placeholder='yourname@email.com' 
                         value={formControl.email} 
                         onChange={handleChange}
+                        className={`${errorStyle("email")}`}
                     />
-                    <p>{errorInfo.email}</p>
+                    <p className="danger">{errorInfo.email}</p>
                 </label>
                 <label htmlFor="message">
                     <p>Message</p>
@@ -142,9 +133,10 @@ const Contact = () => {
                         placeholder='Send me a message and i will reply as soon as possible...'
                         value={formControl.message}
                         onChange={handleChange} 
+                        className={`${errorStyle("message")}`}
                     >
                     </textarea>
-                    <p>{errorInfo.message}</p>
+                    <p className="danger">{errorInfo.message}</p>
                 </label>
                 
                 <label htmlFor="consent" className='consent--container'>
@@ -155,7 +147,7 @@ const Contact = () => {
                         onChange={validateConsent}
                     />
                     <span>You are agreeing to provide a data to your Jesse Ogbonna who may contact you</span>
-                    <p>{errorInfo.consent}</p>
+                    <p className="danger">{errorInfo.consent}</p>
                 </label>
 
                 <button id='btn__submit' className='btn'>Send message</button>

@@ -65,8 +65,8 @@ textarea:focus{
 .name--container input{
     min-width: 100%;
 }
-.consent--container {
-    display: flex;
+.consent--container input {
+    display: inline-block;
 }
 input[type="checkbox"]{
     margin-right: .5rem !important;
@@ -142,7 +142,14 @@ input[type="checkbox"]:disabled {
     max-width: fit-content;
     margin-inline: auto;
 }
-
+.danger {
+    color: #F83F23 !important;
+    font-size: 14px;
+    margin-top: .2rem;
+}
+.danger--input {
+    border: 1px solid #F83F23 !important;
+}
 @media screen and (max-width: 890px) {
     .contact {
         margin-inline: 10% !important;
